@@ -1,0 +1,113 @@
+.card {
+  width: 352px;
+  height: 293px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: #152a46 1px solid;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #152a46;
+}
+
+.logo {
+  margin-right: 12px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 4px;
+  color: #ffcd29;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: normal;
+  color: #fff;
+}
+
+.title-body {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.subtitle-body {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 4px;
+  color: #000;
+}
+
+.description-body {
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.text {
+  width: 50%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.normalPrice {
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: line-through;
+  color: #999999;
+}
+
+.discountedPrice {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff5500;
+}

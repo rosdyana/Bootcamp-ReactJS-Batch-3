@@ -1,0 +1,19 @@
+.button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.roundButton {
+  background-color: #ff6161;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+}
