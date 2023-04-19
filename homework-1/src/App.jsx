@@ -1,11 +1,12 @@
 import React from 'react';
-import Home from './pages/Home';
-import '../src/assets/css/global.css';
+import MateriCrud from './materi-CRUD';
+// Bootstrap css
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
-    <Home />
+    <MateriCrud />
     </>
   )
 }
