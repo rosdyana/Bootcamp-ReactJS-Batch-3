@@ -11,19 +11,19 @@ import convertToRupiah from "../../helpers/convertToRupiah";
  * @param {string} logoSrc - logo source
  * @returns {JSX.Element} - card component
  */
-const Card = ({ title, description, price, discountedPrice, logoSrc }) => {
+const Card = ({ title, description, price, discountedPrice, productImage }) => {
   return (
     <div className={styles.card}>
       <div className={styles.header}>
-        <div className={styles.logo}>
-          <img src={logoSrc} alt="Logo" />
-        </div>
         <div className={styles.headerText}>
           <div className={styles.title}>{title}</div>
-          <div className={styles.description}>{description}</div>
+          {/* <div className={styles.description}>{description}</div> */}
         </div>
       </div>
       <div className={styles.body}>
+        <div className={styles.image}>
+          <img src={productImage} alt="product" />
+        </div>
         <div className={styles.text}>
           <div className={styles.titleBody}>{title}</div>
           <div className={styles.descriptionBody}>{description}</div>

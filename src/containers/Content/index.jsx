@@ -1,56 +1,51 @@
 // Content jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Card from "../../components/Card";
-import Pagination from "../../components/Pagination";
 import Spacer from "../../components/Spacer";
 import styles from "./styles.module.css";
-import cardLogo from "../../assets/img/card-logo.png";
-import { getProducts } from "../../redux/actions/product";
+import { getProducts } from "../../store/product/action";
 
 /**
  * Content component
  * @returns {JSX.Element} - content component
  */
 function Content() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 500;
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const { cards } = useSelector((state) => state.product);
+  const { entities } = useSelector((state) => state.product);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const fetchProducts = async () => {
-    dispatchEvent(getProducts());
+    dispatch(getProducts());
   };
 
+  useEffect(() => {
+    console.log("fetchProducts");
+    fetchProducts();
+  }, []);
+  const goToDetail = (id) => {
+    navigate(`/detail/${id}`);
+  };
   return (
     <>
       <div className={styles.container}>
         <Spacer>
           <div className={styles.cardGrid}>
-            {cards.map((card) => (
-              <Card
-                key={card.id}
-                title={card.title}
-                subtitle={card.subtitle}
-                description={card.description}
-                price={card.price}
-                discountedPrice={card.discountedPrice}
-                logoSrc={card.logoSrc}
-              />
-            ))}
+            {entities.map((card, index) => {
+              return (
+                <Card
+                  key={card.id}
+                  title={card.name}
+                  description={card.description}
+                  price={card.price}
+                  discountedPrice={card.price}
+                  productImage={card.productImage}
+                  onClick={() => goToDetail(card.id)}
+                />
+              );
+            })}
           </div>
-        </Spacer>
-        <Spacer>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-          />
         </Spacer>
       </div>
     </>

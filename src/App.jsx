@@ -7,6 +7,8 @@ import PaymentCheckout from "./pages/PaymentCheckout";
 import PaymentInstruction from "./pages/PaymentInstruction";
 import ProductDetail from "./pages/ProductDetail";
 import Layout from "./components/Layout";
+import { Provider } from "react-redux";
+import store from "./store";
 
 export const routerList = createBrowserRouter([
   {
@@ -35,9 +37,9 @@ export const routerList = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <RouterProvider router={routerList} />
-    </>
+    </Provider>
   );
 }
 
